@@ -1,12 +1,18 @@
 package HW1;
 
-public class Thread3 extends Thread {
+public class MyThread extends Thread {
+
+    private int milliseconds;
+
+    public MyThread(int milliseconds) {
+        this.milliseconds = milliseconds;
+    }
 
     @Override
     public void run() {
         try {
             while(!isInterrupted()) {
-                Thread.sleep(2850);
+                Thread.sleep(milliseconds);
                 System.out.println("Сообщение от " + Thread.currentThread().getName());
             }
         } catch (InterruptedException err) {

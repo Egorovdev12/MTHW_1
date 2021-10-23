@@ -1,7 +1,5 @@
 package HW2;
 
-import HW1.Thread1;
-
 import java.util.concurrent.*;
 
 public class Main {

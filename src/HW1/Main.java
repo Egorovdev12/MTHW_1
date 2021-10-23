@@ -5,15 +5,10 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ThreadGroup threadGroup = new ThreadGroup("main group");
 
-        Thread th1 = new Thread(threadGroup, new Thread1(), "T1");
-        Thread th2 = new Thread(threadGroup, new Thread2(), "T2");
-        Thread th3 = new Thread(threadGroup, new Thread3(), "T3");
-        Thread th4 = new Thread(threadGroup, new Thread4(), "T4");
-
-        th1.start();
-        th2.start();
-        th3.start();
-        th4.start();
+        new Thread(threadGroup, new MyThread(1500), "T1").start();
+        new Thread(threadGroup, new MyThread(1700), "T2").start();
+        new Thread(threadGroup, new MyThread(1900), "T3").start();
+        new Thread(threadGroup, new MyThread(2500), "T4").start();
 
         Thread.sleep(10000);
 
